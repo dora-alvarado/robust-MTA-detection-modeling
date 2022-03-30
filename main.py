@@ -16,12 +16,15 @@ path_img = 'images/images/01_test.tif'
 path_model = 'images/output/01_output.jpg'
 path_gt = 'images/mta_annotations/01_test.tif'
 path_mask = 'images/fov/01_test_mask.gif'
+path_unet = 'images/unet/01_test.png'
 ########################################################################################################################
 # Read image
 ########################################################################################################################
 img_color = read_color_img(path_img)
 img_mask = read_grayscale_img(path_mask) != 0
 img_gt = read_grayscale_img(path_gt)# None
+img_unet = read_grayscale_img(path_unet)>0.5# None
+
 if img_gt is not None:
     img_gt = read_grayscale_img(path_gt) > 0.5
     points_gt = get_gt_points(img_gt)
@@ -31,7 +34,7 @@ else:
 since = timer()
 enh_img, th_img, dt_im, model, inliers, datapoints, knots = spline_modeling(img_color, img_mask, n_keypoints,
                                                                             spline_order, pixel_error=15.,
-                                                                            return_steps=True, th_img=None)
+                                                                            return_steps=True, th_img=img_unet)
 
 time_elapsed = timer() - since
 im_mta = skeletonize(draw_mta_model(th_img, model, keypoints=datapoints, lineThickness=1, truncate = True) / 255.)
