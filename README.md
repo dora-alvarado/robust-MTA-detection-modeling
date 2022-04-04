@@ -6,17 +6,12 @@ Python implementation of a robust MTA detection-modeling algorithm, based on pre
 
 ## Abstract
 
-The Major Temporal Arcade (MTA), the thickest vessel in the retina, has been used as an indicator of the severity for 
-many ocular pathologies for physicians. In this work, a novel method for the automatic detection and numerical modeling 
-of the MTA is presented. The method uses a quadratic-spline approximation with a weighted Random Sample Consensus (RANSAC) 
-scheme for estimating a MTA Probability Map, based on both a Distance-Transform-based vessel thickness image and a 
-foreground-location map. The performance of the proposed method is evaluated in terms of vessel detection, vessel skeleton 
-detection, and closeness between the numerical modeling and the ground-truth delineation of the MTA, using the public 
-benchmark dataset Digital Retinal Images for Vessel Extraction (DRIVE) and manual MTA delineations provided by an expert 
-ophthalmologist. The computational results indicate that the automatic detection and numerical modeling of the MTA achieved  
-by the proposed method outperforms existing approaches with a balanced Accuracy of 0.7067, Mean Distance to Closest Point 
-of 7.40 pixels, and Hausdorff Distance of 27.96 pixels, while demonstrating competitive results in terms of execution time 
-(9.93 seconds per image).
+The Major Temporal Arcade (MTA) is a critical component of the retinal structure that facilitates clinical diagnosis and monitoring of various ocular pathologies.
+Although recent works have addressed the quantitative analysis of the MTA through parametric modeling, their efforts are strongly based on an assumption of symmetry in the MTA shape.
+This work presents a robust method for the detection and piecewise parametric modeling of the MTA in fundus images. 
+The model consists of a piecewise parametric curve with the ability to consider both symmetric and asymmetric scenarios. In an initial stage, multiple models are built from random blood vessel points taken from the blood-vessel segmented retinal image, following a weighted-RANSAC strategy. 
+To choose the final model, the algorithm extracts blood-vessel-width and grayscale-intensity features and merges them to obtain a coarse MTA probability function, which is used to weight the percentage of inlier points for each model. This procedure promotes selecting a model based on points with high MTA probability. 
+Experimental results in the public benchmark dataset Digital Retinal Images for Vessel Extraction (DRIVE), for which manual MTA delineations have been prepared, indicate that the proposed method outperforms existing approaches with a balanced Accuracy of 0.7067, Mean Distance to Closest Point of 7.40 pixels, and Hausdorff Distance of 27.96 pixels, while demonstrating competitive results in terms of execution time (9.93 seconds per image).
 
 ## Prerequisities
 
