@@ -3,3 +3,4 @@
 *.pyc
 *.pyc
 src/__pycache__
+images/.mta_annotations
