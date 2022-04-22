@@ -1,6 +1,27 @@
 # Robust Detection and Modeling of the Major Temporal Arcade in Retinal Fundus Images
 
-Python implementation of a robust MTA detection-modeling algorithm, based on preprint paper "Robust Detection and Modeling of the Major Temporal Arcade in Retinal Fundus Images" (submitted to the journal "MDPI Mathematics" on March 10th, 2022)
+This repository contains companion code for the following [paper](https://doi.org/10.3390/math10081334):
+
+Alvarado-Carrillo, Dora E., Iván Cruz-Aceves, Martha A. Hernández-González, and Luis M. López-Montero. 2022. "Robust Detection and Modeling of the Major Temporal Arcade in Retinal Fundus Images" *Mathematics* 10, no. 8: 1334. https://doi.org/10.3390/math10081334 
+
+If you use this code please cite the paper using the bibtex reference below.
+
+```
+@article{Alvarado2022_robustMTA, 
+  title={Robust Detection and Modeling of the Major Temporal Arcade in Retinal Fundus Images},
+  volume={10}, 
+  ISSN={2227-7390}, 
+  url={http://dx.doi.org/10.3390/math10081334}, 
+  DOI={10.3390/math10081334}, 
+  number={8}, 
+  journal={Mathematics}, 
+  publisher={MDPI AG}, 
+  author={Alvarado-Carrillo, Dora Elisa and Cruz-Aceves, Iván and Hernández-González, Martha Alicia and López-Montero, Luis Miguel}, 
+  year={2022}, 
+  month={Apr}, 
+  pages={1334} 
+}
+```
 
 <!--[](figures/graphical_abstract.png)-->
 
